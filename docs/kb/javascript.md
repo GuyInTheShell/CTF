@@ -4,11 +4,11 @@
 
 * [Interactive shell](#interactive-shell)
 * [Injection](#injection)
-* [Strategy](#strategy)
-  * [Prototype pollution](#prototype-pollution)
+  * [What to inject](#what-to-inject)
+  * [How to inject](#how-to-inject)
+    * [Prototype pollution](#prototype-pollution)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
-
 
 ## Interactive shell
 
@@ -18,9 +18,11 @@ node
 
 ## Injection
 
-## Strategy
+### What to inject
 
-### Prototype pollution
+### How to inject
+
+#### Prototype pollution
 
 Objects of the "base" class share the same `__proto__`.  
 When you see a double indexed access `variable[x][y]`, it is the opportunity to mess with the
