@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# https://stackoverflow.com/questions/59895/how-can-i-get-the-source-directory-of-a-bash-script-from-within-the-script-itsel
+SOURCE="${BASH_SOURCE[0]}"
+# resolve $SOURCE until the file is no longer a symlink
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  # if $SOURCE was a relative symlink, we need to resolve it relative to the
+  # path where the symlink file was located
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+
+if [ -z "$1" ]; then
+  echo "Needs to be called with up, down, exec or commit"
+elif [ "$1" == "down" ]; then
+  docker-compose -f "$DIR/docker-compose.yml" down
+elif [ "$1" == "up" ]; then
+  docker-compose -f "$DIR/docker-compose.yml" up -d
+elif [ "$1" == "exec" ]; then
+  docker exec -it kali /bin/bash
+elif [ "$1" == "commit" ]; then
+  docker container commit kali gbataille/kali
+else
+  echo "Needs to be called with up, down, exec or commit"
+fi
