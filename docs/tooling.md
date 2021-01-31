@@ -25,3 +25,4 @@
 | Penetration/Brute | gobuster     | brew                               | brute forcing (website directory, file, ...)    |
 | Penetration/Brute | wfuzz        | pip, docker: ghcr.io/xmendez/wfuzz | web fuzzer                                      |
 | Steganography     | dtmf-decoder | github                             | sound to phone dial touch                       |
+| Web               | ngrok        | brew + SaaS                        | expose local tcp/http servers to public web     |
