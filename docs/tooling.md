@@ -24,5 +24,8 @@
 | Penetration/CVS   | Nessus       | kali                               | wide ranging vulnerability scanner              |
 | Penetration/Brute | gobuster     | brew                               | brute forcing (website directory, file, ...)    |
 | Penetration/Brute | wfuzz        | pip, docker: ghcr.io/xmendez/wfuzz | web fuzzer                                      |
+| Pwn               | pwn (python) | pip                                | lib to write pwn attacks                        |
 | Steganography     | dtmf-decoder | github                             | sound to phone dial touch                       |
 | Web               | ngrok        | brew + SaaS                        | expose local tcp/http servers to public web     |
+
+<!-- vim: set tw=0: -->
